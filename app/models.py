@@ -17,28 +17,25 @@ summary_tags = Table('summary_tags', Model.metadata,
 class Summary(Model):
     __tablename__ = 'summary'
     id = Column(Integer, autoincrement=True, primary_key=True)
-    summary_text = Column(String(8000))
-    title = Column(String(80))
+    summary_text_en = Column(String(8000))
+    summary_text_es = Column(String(8000))
+    title_en = Column(String(80))
+    title_es = Column(String(80))
     url = Column(String(80))
-    language = Column(String(80))
+    language_en = Column(String(80))
+    language_es = Column(String(80))
     tags = relationship('Tag', secondary=summary_tags)
 
-    def __init__(self, summary_text, title, url, language):
-        self.summary_text = summary_text
-        self.title = title
-        self.url = url
-        self.language = language
+    #collection_class=attribute_mapped_collection('subject')
+    #collection_class=attribute_mapped_collection('subject'),cascade="all, delete-orphan", backref='summary', single_parent=True
+        
+ 
         
 class Tag(Model):
     __tablename__ = 'tag'
     id = Column(Integer, autoincrement=True, primary_key=True)
-    subject = Column(String(120))
-
-
-    def __init__(self, subject):
-        self.subject = subject
+    subject_en = Column(String(120))
+    subject_es = Column(String(120))
 
     def __repr__(self):
-        return self.subject
-
-
+        return u"{0},{1}".format(self.subject_en, self.subject_es)

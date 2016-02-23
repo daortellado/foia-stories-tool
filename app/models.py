@@ -38,4 +38,4 @@ class Tag(Model):
     subject_es = Column(String(120))
 
     def __repr__(self):
-        return "{0},{1}".format(self.subject_en, self.subject_es)
+        return u"{0},{1}".format(self.subject_en, self.subject_es)

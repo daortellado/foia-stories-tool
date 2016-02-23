@@ -1,3 +1,4 @@
+gunicorn
 colorama>=0.3
 click>=3.0
 Flask>=0.10
@@ -6,3 +7,4 @@ Flask-Login==0.2.11
 Flask-OpenID>=1.2.0
 Flask-SQLAlchemy==2.0
 Flask-WTF>=0.9.1
+flask-appbuilder

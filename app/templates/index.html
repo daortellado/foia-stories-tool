@@ -1,14 +1,31 @@
 {% extends "appbuilder/base.html" %}
 {% block content %}
+<style>
+.mainthing{background:url("static/img/entersite.jpg") 50% 50% no-repeat; height:500px; width: 970px; margin-left:auto; margin-right:auto; background-size: contain;}
+.mainthing a{display:block; width:50%; height:100%; float:left;}
+.mainthing b{display:block; text-align: center; font-family: Georgia; color:#fff; border:5px solid #fff; width:45%; margin-left:auto; margin-right:auto; margin-top:60%;}
+.mainthing a:hover{text-decoration: none}
+.mainthing a:hover b{border-color:#ff0; color:#ff0}
+@media screen and (max-width: 1200px) {
+
+.mainthing{height:300px; width:700px;}
+
+}
+@media screen and (max-width: 480px) {
+
+.mainthing{height:200px; width:450px;}
+.mainthing a{float:none;}
+
+}
+</style>
 <div class="jumbotron">
   <div class="container">
     <h1>{{_("Freedom of Information is a right")}}</h1>
     <p>{{_("Civil society organizations in Argentina are challenging the status quo through record requests")}}</p>
-    <p>
-<a href="/articlemasterviewen/list/">
-<img border="0" alt="Enter site" src="static/img/entersite.jpg" width="970" height="500">
-</a>
-</p>
+    
+<div class="mainthing"><a href="/articlemasterviewen/list/"><b>Enter Site</b></a>
+	<a href="/articlemasterviewes/list/" lang="es"><b>Acceder al sitio</b></a></div>
+<br style="clear:left; float:none" />
   </div>
 </div>
 {% endblock %}

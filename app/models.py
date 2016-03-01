@@ -29,7 +29,8 @@ class Summary(Model):
     #collection_class=attribute_mapped_collection('subject')
     #collection_class=attribute_mapped_collection('subject'),cascade="all, delete-orphan", backref='summary', single_parent=True
         
- 
+    def __repr__(self, summary_text_en, summary_text_es, title_en, title_es, url, language_en, language_es):
+        return u"{0},{1}".format(self.summary_text_en, self.summary_text_es, self.title_en, self.title_es, self.url, self.language_en, self.language_es),
         
 class Tag(Model):
     __tablename__ = 'tag'

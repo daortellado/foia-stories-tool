@@ -13,10 +13,18 @@ class SummaryViewEN(ModelView):
         list_columns = ['title_en', 'summary_text_en']
         list_widget = ListItem
 
+        show_fieldsets = [
+        ('Summary',{'fields':['title_en','url','language_en','summary_text_en']})
+        ]
+
 class SummaryViewES(ModelView):
         datamodel = SQLAInterface(Summary)
         list_columns = ['title_es', 'summary_text_es']
         list_widget = ListItem
+
+        show_fieldsets = [
+        ('Summary',{'fields':['title_es','url','language_es','summary_text_es']})
+        ]
 
 class TagViewEN(ModelView):
         datamodel = SQLAInterface(Tag)
